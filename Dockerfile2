@@ -1,0 +1,5 @@
+FROM ghcr.io/romainhild/test-docker:test
+
+LABEL org.opencontainers.image.source https://github.com/romainhild/test-docker
+
+USER root
