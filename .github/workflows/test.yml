@@ -21,7 +21,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          repository: romainhild/test-docker
           tags: ghcr.io/romainhild/test-docker:latest
           file: Dockerfile
           load: true
@@ -29,9 +28,9 @@ jobs:
         name: Test
         run: |
           docker run ghcr.io/romainhild/test-docker:latest echo "toto"
-          - name: Push
-            run: |
-              docker push ghcr.io/romainhild/test-docker:latest
+      - name: Push
+        run: |
+          docker push ghcr.io/romainhild/test-docker:latest
 
       #   - name: build image
       #   run: |
