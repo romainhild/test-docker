@@ -27,7 +27,7 @@ jobs:
       -
         name: Test
         run: |
-          docker run --name test-toto ghcr.io/romainhild/test-docker:latest exit 1
+          docker run --name test-toto ghcr.io/romainhild/test-docker:latest echo 1
       -
         name: Cleanup
         if: ${{ always() }}
