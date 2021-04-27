@@ -27,7 +27,12 @@ jobs:
       -
         name: Test
         run: |
-          docker run ghcr.io/romainhild/test-docker:latest echo "toto"
+          docker run --name test-toto ghcr.io/romainhild/test-docker:latest echo "toto"
+      -
+        name: Cleanup
+        if: ${{ failure() }}
+        run: |
+          docker stop test-toto
       - name: Push
         run: |
           docker push ghcr.io/romainhild/test-docker:latest
