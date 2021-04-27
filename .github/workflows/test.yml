@@ -24,6 +24,8 @@ jobs:
           tags: ghcr.io/romainhild/test-docker:latest
           file: Dockerfile
           load: true
+          build-args:
+            "MY_KEY=${{ secrets.TEST_SECRET }}"
       -
         name: Test
         run: |
